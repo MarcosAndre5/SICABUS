@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+html {
+	background-color:#99ccff;
+}
+#container {
+	text-align:left;
+  	margin: 0 auto;
+  	width:860px;
+  	margin-top: 10px;
+  	background-color:#f2f2f2;
+  	padding-top: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    font-family: "Calibri";
+}
+h1 {
+	text-align:center;
+}
+body {
+	text-align:center;
+  	margin: 0;
+  	padding: 0;
+}
+#rodape { 	
+	clear: both;
+	color: #000;
+	text-align: right;
+	padding: 5px;
+	font-size: 90%;
+	border-top: 1px solid #999;
+	margin-top: 2em; 
+}
+.ui-widget,.ui-widget .ui-widget {
+	font-size: 15px !important;
+}

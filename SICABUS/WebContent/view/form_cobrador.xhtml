@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">    
+<h:head>
+	<title>SICABUS - Cadastrar Cobrador</title>
+	<link rel="StyleSheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/estilos.css" media="screen"/>
+	<link rel="shortcut icon" href="#{facesContext.externalContext.requestContextPath}/imagens/icone.png" type="image/x-icon" />
+</h:head>
+<h:body>
+	<div id="container">
+		<h1>
+			Sistema Gerenciador de Cadastro de Ônibus
+			<h:graphicImage value="/imagens/icone.png" width="30" height="30" />
+		</h1>
+		<hr/>
+		<p:menubar>
+			<p:menuitem value="Inicio" url="../index.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Empresa" url="form_empresa.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Motorista" url="form_motorista.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Cobrador" url="form_cobrador.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Linha" url="form_linha.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Ônibus" url="form_onibus.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Viagem" url="form_viagem.jsf"></p:menuitem>
+			<p:menuitem value="Lista" url="list_onibus.jsf"></p:menuitem>
+		</p:menubar>
+	    <h2>Cadastrar Cobrador:</h2>
+	    <h:form>
+	    	<fieldset>
+	        	<p> Nome: <p:inputText value="#{cadastrarCobradorMBean.cobrador.nome}" size="50" required="true" requiredMessage="Nome: Campo obrigatório." /> </p>
+	        	<p> Idade: <p:inputText value="#{cadastrarCobradorMBean.cobrador.idade}" size="2" required="true" requiredMessage="Idade: Campo obrigatório." /> </p>
+	      		<p> CPF: <p:inputText value="#{cadastrarCobradorMBean.cobrador.cpf}" size="15" required="true" requiredMessage="CPF: Campo obrigatório." /> </p> 		
+	      		<p> RG: <p:inputText value="#{cadastrarCobradorMBean.cobrador.rg}" size="15" required="true" requiredMessage="RG: Campo obrigatório." /> </p>
+	            <p> Matrícula: <p:inputText value="#{cadastrarCobradorMBean.cobrador.matricula}" size="15" required="true" requiredMessage="Matrícula: Campo obrigatório." /> </p>
+	            <p> Endereço: <p:inputTextarea value="#{cadastrarCobradorMBean.cobrador.endereco}" size="50" required="true" requiredMessage="Endereço: Campo obrigatório." /> </p>
+	            <h:messages/> 
+	            <p> <p:commandButton value="Cadastrar" action="#{cadastrarCobradorMBean.cadastrar}" update="@form" /> </p>
+			</fieldset>
+		</h:form>
+		<div id="rodape">
+			Copyright © Marcos | Althierfson. Julho de 2018
+		</div>
+		<hr/>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">	
+<h:head>
+	<title>SICABUS</title>
+	<link rel="StyleSheet" type="text/css" href="css/estilos.css" media="screen"/>
+	<link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon" />
+</h:head>
+<h:body>
+	<div id="container">
+		<h1>
+			Sistema Gerenciador de Cadastro de Ônibus
+			<h:graphicImage value="imagens/icone.png" width="30" height="30" />
+		</h1>
+		<hr/>
+		<p:menubar>
+			<p:menuitem value="Inicio" url="index.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Empresa" url="view/form_empresa.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Motorista" url="view/form_motorista.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Cobrador" url="view/form_cobrador.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Linha" url="view/form_linha.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Ônibus" url="view/form_onibus.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Viagem" url="view/form_viagem.jsf"></p:menuitem>
+			<p:menuitem value="Lista" url="view/list_onibus.jsf"></p:menuitem>
+		</p:menubar>
+		<h2>Operações do Sistema:</h2>
+		<h:form>
+			<fieldset>
+				<p>	
+					O Sistema Gerenciador de Cadastro Ônibus - SICABUS é um projeto desenvolvido como trabalho final da disciplina de Banco de Dados 
+					no curso de Ciência da Computação pelos alunos Marcos André e Althierfson Tullio na Universidade do Estado do Rio Grande do Norte,
+					período 2017.2.
+				</p>
+			</fieldset>
+		</h:form>
+		<div id="rodape">
+			Copyright © Marcos | Althierfson. Julho de 2018
+		</div>
+		<hr/>
+	</div>
+</h:body>
+</html>

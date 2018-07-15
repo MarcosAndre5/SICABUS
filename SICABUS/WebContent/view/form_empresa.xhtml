@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>SICABUS - Cadastrar Empresa</title>
+	<link rel="StyleSheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/estilos.css" media="screen"/>
+	<link rel="shortcut icon" href="#{facesContext.externalContext.requestContextPath}/imagens/icone.png" type="image/x-icon" />
+</h:head>
+<h:body>
+	<div id="container">
+		<h1>
+			Sistema Gerenciador de Cadastro de Ônibus
+			<h:graphicImage value="/imagens/icone.png" width="30" height="30" />
+		</h1>
+		<hr/>
+		<p:menubar>
+			<p:menuitem value="Inicio" url="../index.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Empresa" url="form_empresa.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Motorista" url="form_motorista.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Cobrador" url="form_cobrador.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Linha" url="form_linha.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Ônibus" url="form_onibus.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Viagem" url="form_viagem.jsf"></p:menuitem>
+			<p:menuitem value="Lista" url="list_onibus.jsf"></p:menuitem>
+		</p:menubar>
+	    <h2>Cadastrar Empresa:</h2>
+	    <h:form>
+	    	<fieldset>
+	    		<p> Nome da Empresa: <p:inputText value="#{cadastrarEmpresaMBean.empresa.nomeEmpresa}" size="50"  requiredMessage="Nome da Empresa: Campo obrigatório." /> </p>
+	    		<p> Email: <p:inputText value="#{cadastrarEmpresaMBean.empresa.email}" size="30"  requiredMessage="Email: Campo obrigatório." /> </p>
+	        	<p> CNPJ: <p:inputText value="#{cadastrarEmpresaMBean.empresa.cnpj}" size="20"  requiredMessage="CPNJ: Campo obrigatório." /> </p>
+	        	<p> CEP: <p:inputText value="#{cadastrarEmpresaMBean.empresa.cep}" size="10"  requiredMessage="CEP: Campo obrigatório." /> </p>
+	        	<p> Telefone: <p:inputText value="#{cadastrarEmpresaMBean.empresa.telefone}" size="15"  requiredMessage="Telefone: Campo obrigatório." /> </p>
+	        	<p> Endereço: <p:inputTextarea value="#{cadastrarEmpresaMBean.empresa.endereco}" size="50" requiredMessage="Endereço: Campo obrigatório." /> </p>
+	            <h:messages/>
+	            <p>
+	            	<p:commandButton value="Salvar" action="#{cadastrarEmpresaMBean.cadastrar}" update="@form" />
+	            	<p:commandButton value="Buscar" action="#{cadastrarEmpresaMBean.listar}" update="@form" />
+	           	</p>
+	           	<p:dataTable emptyMessage="Nenhum registro encontrado." value="#{cadastrarEmpresaMBean.empresas}" var="empresa">
+	           		<p:column>
+                    	<p:commandButton value="Editar" action="#{cadastrarEmpresaMBean.editar(empresa)}" update="@form" ></p:commandButton>
+                    	<p:commandButton value="Deletar" action="#{cadastrarEmpresaMBean.deletar(empresa)}" update="@form" ></p:commandButton>
+               	 	</p:column>
+	                <p:column headerText="Nome" sortBy="#{empresa.nomeEmpresa}">
+	                    <h:outputText value="#{empresa.nomeEmpresa}"></h:outputText>
+	                </p:column>
+	                <p:column headerText="Email" sortBy="#{empresa.email}">
+	                    <h:outputText value="#{empresa.email}"></h:outputText>
+	                </p:column>
+	                <p:column headerText="CNPJ" sortBy="#{empresa.cnpj}">
+	                    <h:outputText value="#{empresa.cnpj}"></h:outputText>
+	                </p:column>
+	                <p:column headerText="CEP" sortBy="#{empresa.cep}">
+	                    <h:outputText value="#{empresa.cep}"></h:outputText>
+	                </p:column>
+	                <p:column headerText="Telefone" sortBy="#{empresa.telefone}">
+	                    <h:outputText value="#{empresa.telefone}"></h:outputText>
+	                </p:column>
+	                <p:column headerText="Endereço" sortBy="#{empresa.endereco}">
+	                    <h:outputText value="#{empresa.endereco}"></h:outputText>
+	                </p:column>
+            	</p:dataTable>
+	    	</fieldset>
+		</h:form>
+		<div id="rodape">
+			Copyright © Marcos | Althierfson. Julho de 2018
+		</div>
+		<hr/>
+	</div>
+</h:body>
+</html>

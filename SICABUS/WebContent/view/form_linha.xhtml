@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">	
+<h:head>
+	<title>SICABUS - Cadastrar Linha</title>
+	<link rel="StyleSheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/css/estilos.css" media="screen"/>
+	<link rel="shortcut icon" href="#{facesContext.externalContext.requestContextPath}/imagens/icone.png" type="image/x-icon" />
+</h:head>
+<h:body>
+	<div id="container">
+		<h1>
+			Sistema Gerenciador de Cadastro de Ônibus
+			<h:graphicImage value="/imagens/icone.png" width="30" height="30" />
+		</h1>
+		<hr/>
+		<p:menubar>
+			<p:menuitem value="Inicio" url="../index.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Empresa" url="form_empresa.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Motorista" url="form_motorista.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Cobrador" url="form_cobrador.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Linha" url="form_linha.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Ônibus" url="form_onibus.jsf"></p:menuitem>
+			<p:menuitem value="Cadastro Viagem" url="form_viagem.jsf"></p:menuitem>
+			<p:menuitem value="Lista" url="list_onibus.jsf"></p:menuitem>
+		</p:menubar>
+		<h2>Cadastrar Linha:</h2>
+		<h:form>
+			<fieldset>
+				<p> Nº Linha: <p:inputText value="#{cadastrarLinhaMBean.linha.numLinha}" size="1" required="true" requiredMessage="Nº Linha: Campo obrigatório." /> </p>
+				<p> Origem: <p:inputText value="#{cadastrarLinhaMBean.linha.origem}" size="50" required="true" requiredMessage="Origem: Campo obrigatório." /> </p>
+				<p> Destino: <p:inputText value="#{cadastrarLinhaMBean.linha.destino}" size="50" required="true" requiredMessage="Destino: Campo obrigatório." /> </p>
+				<h:messages/>
+				<p> <p:commandButton value="Cadastrar" action="#{cadastrarLinhaMBean.cadastrar}" update="@form" /> </p>
+			</fieldset>
+		</h:form>
+		<div id="rodape">
+			Copyright © Marcos | Althierfson. Julho de 2018
+		</div>
+		<hr/>
+	</div>
+</h:body>
+</html>
