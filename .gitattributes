@@ -1,0 +1,3 @@
+static/* linguist-vendored
+docs/* linguist-documentation
+*.html linguist-language=Java
